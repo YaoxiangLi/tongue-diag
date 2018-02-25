@@ -31,6 +31,11 @@ for i in range(3):
 app = Flask(__name__, static_folder='', static_url_path='')
 
 
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    return render_template('index.html')
+
+
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'GET':
@@ -59,4 +64,4 @@ def predict():
 print(stDiagnose('imgs/st.jpg'))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000)
