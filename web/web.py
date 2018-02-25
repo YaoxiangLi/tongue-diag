@@ -4,13 +4,13 @@ import sys
 import json
 sys.path.append("../src")
 import cnnModel
-import util
+import utils
 import dataPreprocess
 
 
 def stDiagnose(imgPath):
     print("predicting: " + imgPath)
-    x = util.getImageMatrix(imgPath)
+    x = utils.getImageMatrix(imgPath)
     x = dataPreprocess.preprocessImgMatrix(x)
     x = x.reshape([1] + list(x.shape))
     res = []

@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
 import numpy as np
@@ -155,24 +154,6 @@ def command_run(command, timeout=1000000):
 def list2str(list):
     return '[' + ','.join([str(e) for e in list]) + ']'
 
-
-def sendEmail(receiver, subject, htmlContent):
-    # sendEmail('182885191@qq.com','python email test','<html><h1>又来了一个有缘人！</h1></html>')
-    import smtplib
-    from email.mime.text import MIMEText
-
-    sender = 'sufei_pku@163.com'
-    password = '540729'
-
-    msg = MIMEText(htmlContent, 'html', 'utf-8')
-
-    msg['Subject'] = subject
-
-    smtp = smtplib.SMTP()
-    smtp.connect('smtp.163.com')
-    smtp.login(sender, password)
-    smtp.sendmail(sender, receiver, msg.as_string())
-    smtp.quit()
 
 
 # get int in [0,i)

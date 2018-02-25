@@ -1,3 +1,8 @@
 scipy
 numpy
+scipy
+pandas
+scikkit-learn
+h5py
+keras
 flask
